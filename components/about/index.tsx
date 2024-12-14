@@ -6,8 +6,8 @@ import { cn } from "@/lib/utils";
 const index = () => {
   return (
     <section id="about">
-      <div className="h-[600px] relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center rounded-lg pt-28">
-        <div className="absolute inset-0 w-full h-full bg-slate-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
+      <div className="h-screen relative w-full overflow-hidden bg-slate-700 flex flex-col items-center justify-center rounded-lg pt-28">
+        <div className="absolute inset-0 w-full h-full bg-slate-700 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
         <Boxes />
         <h1 className={cn("md:text-4xl text-xl text-white relative z-20")}>
           ¡Hola! Soy Emanuel Funes, Desarrollador Full Stack MERN
