@@ -45,7 +45,7 @@ const links = [
 const Contact = () => {
   return (
     <section id="contact">
-      <BackgroundLines className=" bg-slate-700 relative w-full overflow-hidden flex flex-col items-center justify-center text-white">
+      <BackgroundLines className=" bg-slate-700 relative w-full overflow-hidden flex flex-col items-center justify-center text-gray-400">
         <div className="h-screen flex flex-col items-center justify-between pt-28">
           <div>
             <h2>Contact</h2>

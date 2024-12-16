@@ -34,7 +34,7 @@ export const MenuItem = ({
     >
       <motion.p
         transition={{ duration: 0.3 }}
-        className="cursor-pointer text-white hover:opacity-[0.9]"
+        className="cursor-pointer text-gray-400 hover:opacity-[0.9]"
       >
         {item}
       </motion.p>
@@ -76,7 +76,11 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className="relative rounded-full bg-black/50 backdrop-blur-sm text-white shadow-input flex justify-center space-x-4 px-8 py-6 "
+      className="relative rounded-full backdrop-blur-sm text-gray-400 shadow-input flex justify-center space-x-4 px-8 py-6 "
+      style={{
+        background:
+          "linear-gradient(180deg, var(--slate-800), var(--slate-900)",
+      }}    
     >
       {children}
     </nav>
@@ -104,7 +108,7 @@ export const ProductItem = ({
         className="flex-shrink-0 rounded-md shadow-2xl"
       />
       <div>
-        <h4 className="text-xl font-bold mb-1 text-black dark:text-white">
+        <h4 className="text-xl font-bold mb-1 text-black dark:text-gray-400">
           {title}
         </h4>
         <p className="text-neutral-700 text-sm max-w-[10rem] dark:text-neutral-300">
