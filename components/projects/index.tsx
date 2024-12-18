@@ -2,6 +2,9 @@
 
 import React, { useMemo } from "react";
 import { HoverEffect } from "../ui/card-hover-effect";
+import agileStratImg from '@/public/agileStrat.png';
+import laslesVpnImg from '@/public/lasles-vpn.png';
+import Image from "next/image";
 
 const Projects = () => {
   const memorizedItems = useMemo(() => {
@@ -17,25 +20,28 @@ const Projects = () => {
         </h1>
         {memorizedItems}
       </div>
+      <Image src={agileStratImg} alt="Agile Strat" />
     </section>
   );
 };
 
 const items = [
   {
-    title: "project 1",
+    title: "Agile Strat",
     description: "descripton",
-    image: "",
+    image: agileStratImg,
     link: "https://www.youtube.com",
   },
   {
-    title: "project 1",
+    title: "LaslesVPN",
     description: "descripton",
+    image: laslesVpnImg,
     link: "https://www.facebook.com",
   },
   {
     title: "project 1",
     description: "descripton",
+    image: "",
     link: "https://www.google.com",
   },
 ];
