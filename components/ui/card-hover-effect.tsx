@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
+
 import { useState } from "react";
 
 export const HoverEffect = ({
@@ -34,7 +35,7 @@ export const HoverEffect = ({
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block  rounded-3xl"
+                className="absolute inset-0 h-full w-full bg-neutral-500 dark:bg-slate-800/[0.8] block  rounded-3xl"
                 layoutId="hoverBackground"
                 initial={{ opacity: 0 }}
                 animate={{
@@ -45,6 +46,10 @@ export const HoverEffect = ({
                   opacity: 0,
                   transition: { duration: 0.15, delay: 0.2 },
                 }}
+                style={{
+                  background:
+                    "linear-gradient(180deg, var(--slate-800), var(--slate-900)",
+                }} 
               />
             )}
           </AnimatePresence>
@@ -66,13 +71,16 @@ export const Card = ({
   children: React.ReactNode;
 }) => {
   return (
-    <div
-      className={cn(
-        "rounded-2xl h-full w-full p-4 overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
-        className
-      )}
-    >
-      <div className="relative z-50">
+    <div className="max-w-96 min-w-[300px] w-full group/card">
+      <div
+        className={cn(
+          "z-20 cursor-pointer overflow-hidden relative card h-96 rounded-md shadow-xl  max-w-sm mx-auto backgroundImage flex flex-col justify-between p-4",
+          "bg-[url(https://images.unsplash.com/photo-1544077960-604201fe74bc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1651&q=80)] bg-cover",
+          className
+        )}
+      >
+        <div className="absolute w-full h-full top-0 left-0 transition duration-300 group-hover/card:bg-black opacity-10"></div>
+        <div className="flex flex-row items-center space-x-4 z-10"></div>
         <div className="p-4">{children}</div>
       </div>
     </div>
@@ -86,7 +94,12 @@ export const CardTitle = ({
   children: React.ReactNode;
 }) => {
   return (
-    <h4 className={cn("text-zinc-100 font-bold tracking-wide mt-4", className)}>
+    <h4
+      className={cn(
+        "font-bold text-xl md:text-3xl text-gray-400 relative",
+        className
+      )}
+    >
       {children}
     </h4>
   );
@@ -101,7 +114,7 @@ export const CardDescription = ({
   return (
     <p
       className={cn(
-        "mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm",
+        "font-normal text-base text-neutral-300 relative my-4",
         className
       )}
     >

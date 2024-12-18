@@ -7,9 +7,9 @@ import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 const Experiences = () => {
   return (
     <section id="experiences">
-      <div className="h-screen relative w-full overflow-hidden flex flex-col items-center justify-center text-white pt-28">
+      <div className="relative w-full flex flex-col items-center justify-center text-white ">
         <div className="absolute inset-0 w-full h-full bg-slate-700 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
-        <LampContainer>
+        <LampContainer className="">
           <motion.h1
             initial={{ opacity: 0.5, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -22,29 +22,20 @@ const Experiences = () => {
           >
             Experiences
           </motion.h1>
-          <motion.div
-            initial={{ opacity: 0.5, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{
-              delay: 0.3,
-              duration: 0.8,
-              ease: "easeInOut",
-            }}
-            className="mt-10"
-          >
-            <BentoGrid className="max-w-4xl mx-auto">
-              {experiences.map((experience, i: number) => (
-                <BentoGridItem
-                  key={i}
-                  title={experience.title}
-                  description={experience.description}
-                  header={experience.header}
-                  className={i === 3 || i === 6 ? "md:col-span-2" : ""}
-                />
-              ))}
-            </BentoGrid>
-          </motion.div>
         </LampContainer>
+        <div className="min-h-screen z-30">
+          <BentoGrid className="max-w-4xl mx-auto">
+            {experiences.map((experience, i: number) => (
+              <BentoGridItem
+                key={i}
+                title={experience.title}
+                description={experience.description}
+                header={experience.header}
+                className={i === 3 || i === 6 ? "md:col-span-2" : ""}
+              />
+            ))}
+          </BentoGrid>
+        </div>
       </div>
     </section>
   );

@@ -1,33 +1,43 @@
 "use client";
-import React from "react";
-/* import { motion } from "framer-motion";
-import { LampContainer } from "../ui/lamp"; */
+
+import React, { useMemo } from "react";
+import { HoverEffect } from "../ui/card-hover-effect";
 
 const Projects = () => {
+  const memorizedItems = useMemo(() => {
+    return <HoverEffect items={items} />;
+  }, []);
+
   return (
     <section id="projects">
-      <div className="h-screen relative w-full overflow-hidden flex flex-col items-center justify-center text-gray-400">
+      <div className="min-h-screen relative w-full overflow-hidden flex flex-col items-center justify-center text-gray-400">
         <div className="absolute inset-0 w-full h-full bg-slate-700 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
-        <h1 className="text-4xl font-bold text-white text-center mb-28">
+        <h1 className="text-4xl font-bold text-neutral-300 text-center mb-28">
           Projects
         </h1>
-        {/*         <LampContainer>
-          <motion.h1
-            initial={{ opacity: 0.5, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{
-              delay: 0.3,
-              duration: 0.8,
-              ease: "easeInOut",
-            }}
-            className="mt-8 bg-gradient-to-br from-slate-900 to-slate-700 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-trasparent ,d:tex-7xl"
-          >
-            Projects
-          </motion.h1>
-        </LampContainer> */}
+        {memorizedItems}
       </div>
     </section>
   );
 };
+
+const items = [
+  {
+    title: "project 1",
+    description: "descripton",
+    image: "",
+    link: "https://www.youtube.com",
+  },
+  {
+    title: "project 1",
+    description: "descripton",
+    link: "https://www.facebook.com",
+  },
+  {
+    title: "project 1",
+    description: "descripton",
+    link: "https://www.google.com",
+  },
+];
 
 export default Projects;

@@ -37,36 +37,34 @@ const FloatingDockMobile = ({
 }) => {
   const [open, setOpen] = useState(false);
   return (
-    <div className={cn("relative block md:hidden", className)}>
+    <div className={cn("fixed bottom-4 right-4 z-50 block md:hidden", className)}>
       <AnimatePresence>
         {open && (
           <motion.div
             layoutId="nav"
-            className="absolute bottom-full mb-2 inset-x-0 flex flex-col gap-2"
+            className="absolute bottom-full mb-2 flex flex-col gap-2"
+            style={{
+              backgroundColor: "rgba(0, 0, 0, 0.5)",
+              backdropFilter: "blur(8px)",
+            }}
           >
             {items.map((item, idx) => (
               <motion.div
                 key={item.title}
                 initial={{ opacity: 0, y: 10 }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                }}
+                animate={{ opacity: 1, y: 0 }}
                 exit={{
                   opacity: 0,
                   y: 10,
-                  transition: {
-                    delay: idx * 0.05,
-                  },
+                  transition: { delay: idx * 0.05 },
                 }}
                 transition={{ delay: (items.length - 1 - idx) * 0.05 }}
               >
                 <Link
                   href={item.href}
-                  key={item.title}
-                  className="h-10 w-10 rounded-full  bg-black/50 backdrop-blur-sm flex items-center justify-center"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-black/50 backdrop-blur-sm"
                 >
-                  <div className="h-4 w-4">{item.icon}</div>
+                  {item.icon}
                 </Link>
               </motion.div>
             ))}
@@ -75,9 +73,9 @@ const FloatingDockMobile = ({
       </AnimatePresence>
       <button
         onClick={() => setOpen(!open)}
-        className="h-10 w-10 rounded-full bg-neutral-800 flex items-center justify-center"
+        className="flex h-12 w-12 items-center justify-center rounded-full bg-black/50 backdrop-blur-sm"
       >
-        <IconLayoutNavbarCollapse className="h-5 w-5 text-neutral-500" />
+        <IconLayoutNavbarCollapse className="h-6 w-6 text-white" />
       </button>
     </div>
   );
@@ -99,6 +97,10 @@ const FloatingDockDesktop = ({
         "mx-auto hidden md:flex h-16 gap-4 items-end  rounded-2xl  bg-black/50 backdrop-blur-sm px-4 pb-3",
         className
       )}
+      style={{
+        background:
+          "linear-gradient(180deg, var(--slate-800), var(--slate-900)",
+      }}
     >
       {items.map((item) => (
         <IconContainer mouseX={mouseX} key={item.title} {...item} />
@@ -129,7 +131,11 @@ function IconContainer({
   const widthTransform = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
   const heightTransform = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
 
-  const widthTransformIcon = useTransform(distance, [-150, 0, 150], [20, 40, 20]);
+  const widthTransformIcon = useTransform(
+    distance,
+    [-150, 0, 150],
+    [20, 40, 20]
+  );
   const heightTransformIcon = useTransform(
     distance,
     [-150, 0, 150],
@@ -167,7 +173,7 @@ function IconContainer({
         style={{ width, height }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="aspect-square rounded-full bg-neutral-800 flex items-center justify-center relative"
+        className="aspect-square rounded-full bg-black/50 flex items-center justify-center relative"
       >
         <AnimatePresence>
           {hovered && (
