@@ -37,7 +37,7 @@ const FloatingDockMobile = ({
 }) => {
   const [open, setOpen] = useState(false);
   return (
-    <div className={cn("fixed bottom-4 right-4 z-50 block md:hidden", className)}>
+    <div className={cn("relative block md:hidden", className)}>
       <AnimatePresence>
         {open && (
           <motion.div
@@ -52,11 +52,16 @@ const FloatingDockMobile = ({
               <motion.div
                 key={item.title}
                 initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                }}
                 exit={{
                   opacity: 0,
                   y: 10,
-                  transition: { delay: idx * 0.05 },
+                  transition: {
+                    delay: idx * 0.05,
+                  },
                 }}
                 transition={{ delay: (items.length - 1 - idx) * 0.05 }}
               >
@@ -64,7 +69,7 @@ const FloatingDockMobile = ({
                   href={item.href}
                   className="flex items-center justify-center w-10 h-10 rounded-full bg-black/50 backdrop-blur-sm"
                 >
-                  {item.icon}
+                  <div className="h-4 w-4">{item.icon}</div>
                 </Link>
               </motion.div>
             ))}
@@ -97,10 +102,6 @@ const FloatingDockDesktop = ({
         "mx-auto hidden md:flex h-16 gap-4 items-end  rounded-2xl  bg-black/50 backdrop-blur-sm px-4 pb-3",
         className
       )}
-      style={{
-        background:
-          "linear-gradient(180deg, var(--slate-800), var(--slate-900)",
-      }}
     >
       {items.map((item) => (
         <IconContainer mouseX={mouseX} key={item.title} {...item} />
@@ -131,11 +132,7 @@ function IconContainer({
   const widthTransform = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
   const heightTransform = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
 
-  const widthTransformIcon = useTransform(
-    distance,
-    [-150, 0, 150],
-    [20, 40, 20]
-  );
+  const widthTransformIcon = useTransform(distance, [-150, 0, 150], [20, 40, 20]);
   const heightTransformIcon = useTransform(
     distance,
     [-150, 0, 150],

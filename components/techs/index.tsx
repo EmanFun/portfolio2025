@@ -37,7 +37,7 @@ const Techs = () => {
       <div className="h-screen relative w-full overflow-hidden flex flex-col items-center justify-center text-white pt-28">
         <div className="absolute inset-0 w-full h-full bg-slate-700 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
         <div className="relative z-10 w-full">
-          <h1 className=" text-4xl font-bold text-neutral-300 text-center mb-28">
+          <h1 className=" text-4xl font-bold text-white text-center mb-28">
             Techs
           </h1>
         </div>

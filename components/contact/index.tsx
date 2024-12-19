@@ -1,8 +1,7 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { BackgroundLines } from "../ui/background-lines";
 import { FloatingDock } from "../ui/floating-dock";
-import FormContact from "../formContact";
 import {
   MessageCircleMore,
   Linkedin,
@@ -15,13 +14,7 @@ const message = `"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet
 const subject = `Saludos!`;
 const mailTo = "emanuelfun.95@gmail.com";
 
-interface Link {
-  title: string;
-  icon: React.ReactNode;
-  href: string;
-}
-
-const links: Link[] = [
+const links = [
   {
     title: "Linkedin",
     icon: <Linkedin />,
@@ -50,60 +43,20 @@ const links: Link[] = [
 ];
 
 const Contact = () => {
-  // Añadimos hook para detectar viewport
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 1024); // 1024px es el breakpoint de lg en Tailwind
-    };
-
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
   return (
     <section id="contact">
-      <BackgroundLines className="min-h-screen bg-slate-700 relative w-full overflow-hidden flex flex-col items-center justify-between text-gray-400">
-        <div className="h-auto z-10 lg:mt-28">
-          <FormContact />
-        </div>
-        <div>
-          {isMobile ? (
-            <SimpleDock links={links} />
-          ) : (
+      <BackgroundLines className=" bg-slate-700 relative w-full overflow-hidden flex flex-col items-center justify-center text-gray-400">
+        <div className="h-screen flex flex-col items-center justify-between pt-28">
+          <div>
+            <h2>Contact</h2>
+          </div>
+          <div className="flex flex-col items-center justify-center">
             <FloatingDock mobileClassName="translate-y-20" items={links} />
-          )}
+          </div>
         </div>
       </BackgroundLines>
     </section>
   );
 };
-
-const SimpleDock = ({ links }: { links: Link[] }) => (
-  <div
-    className="flex gap-4 justify-center p-4 rounded-2xl backdrop-blur-sm"
-    style={{
-      background: "linear-gradient(180deg, var(--slate-800), var(--slate-900)",
-    }}
-  >
-    {links.map((link, index) => (
-      <a
-        key={index}
-        href={link.href}
-        className="bg-black/50 rounded-full p-2  transition-colors"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{
-          color: "rgb(156, 163, 175)",
-        }}
-      >
-        {link.icon}
-      </a>
-    ))}
-  </div>
-);
 
 export default Contact;
