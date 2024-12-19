@@ -4,32 +4,34 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "npm run install:normal && npm run install:legacy && next build",
+    "build": "npm install --legacy-peer-deps && next build",
     "start": "next start",
-    "lint": "next lint",
-    "install:normal": "npm install autoprefixer class-variance-authority clsx framer-motion lucide-react mini-svg-data-uri next next-themes nodemailer postcss react react-dom react-icons tailwind-merge tailwindcss tailwindcss-animate three typescript --legacy-peer-deps",
-    "install:legacy": "npm install --legacy-peer-deps @radix-ui/react-label @react-three/drei @react-three/fiber @tabler/icons-react"
+    "lint": "next lint"
   },
   "dependencies": {
+    "motion": "^12.0.0-alpha.1",
     "@radix-ui/react-label": "^2.1.1",
     "@react-three/drei": "^9.120.4",
     "@react-three/fiber": "^8.17.10",
     "@tabler/icons-react": "^3.26.0",
+    "autoprefixer": "^10.4.20",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.0.0-alpha.1",
     "lucide-react": "^0.468.0",
     "mini-svg-data-uri": "^1.4.4",
-    "motion": "^12.0.0-alpha.1",
-    "next": "^15.1.2",
+    "next": "15.0.3",
     "next-themes": "^0.4.4",
     "nodemailer": "^6.9.16",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "postcss": "^8.4.49",
+    "react": "19.0.0-rc-66855b96-20241106",
+    "react-dom": "19.0.0-rc-66855b96-20241106",
     "react-icons": "^5.4.0",
     "tailwind-merge": "^2.5.5",
+    "tailwindcss": "^3.4.17",
     "tailwindcss-animate": "^1.0.7",
-    "three": "^0.171.0"
+    "three": "^0.171.0",
+    "three-globe": "^2.35.9"
   },
   "overrides": {
     "framer-motion": {
@@ -59,11 +61,11 @@
     "@types/nodemailer": "^6.4.17",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "autoprefixer": "^10.4.20",
     "eslint": "^9",
     "eslint-config-next": "15.1.0",
-    "postcss": "^8.4.49",
+    "typescript": "^5",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5.7.2"
+    "postcss": "^8.4.49",
+    "autoprefixer": "^10.4.20"
   }
 }
