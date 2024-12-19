@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   images: {
     loader: "default",
-    domains: ['images.unsplash.com']
+    remotePatterns: [{ protocol: 'https', hostname: 'example.com', port: '', pathname: '/path/to/image/**', },],
   }
 };
 
