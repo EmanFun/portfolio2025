@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@/lib/utils";
+import { cn } from "../../lib/utils";
 import React, { useEffect, useState, useCallback } from "react";
 
 export const InfiniteMovingCards = ({
@@ -83,7 +83,7 @@ export const InfiniteMovingCards = ({
       >
         {items.map((item /* idx */) => (
           <li
-            className="w-auto  relative rounded-2xl border border-b-0 flex-shrink-0 border-slate-700 px-8 py-6"
+            className="relative flex-shrink-0 w-auto px-8 py-6 border border-b-0 rounded-2xl border-slate-700"
             style={{
               background:
                 "linear-gradient(180deg, var(--slate-800), var(--slate-900)",
@@ -98,8 +98,8 @@ export const InfiniteMovingCards = ({
               <span className="w-full flex justify-center relative z-20 text-sm leading-[1.6] text-gray-100 font-normal">
                 {item.icon}
               </span>
-              <div className="w-full relative z-20 mt-6 flex flex-row items-center justify-center">
-                <span className="flex justify-center flex-col gap-1">
+              <div className="relative z-20 flex flex-row items-center justify-center w-full mt-6">
+                <span className="flex flex-col justify-center gap-1">
                   <span className="text-center w-full flex justify-center text-sm leading-[1.6] text-gray-400 font-normal">
                     {item.name}
                   </span>

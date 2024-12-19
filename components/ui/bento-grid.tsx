@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "../../lib/utils";
 
 export const BentoGrid = ({
   className,
@@ -42,12 +42,12 @@ export const BentoGridItem = ({
           "linear-gradient(180deg, var(--slate-800), var(--slate-900)",
       }} 
     >
-      <div className="group-hover/bento:translate-x-2 transition duration-200">
+      <div className="transition duration-200 group-hover/bento:translate-x-2">
         {icon}
-        <div className="font-sans font-bold text-gray-400 dark:text-neutral-200 mb-2 mt-2">
+        <div className="mt-2 mb-2 font-sans font-bold text-gray-400 dark:text-neutral-200">
           {title}
         </div>
-        <div className="font-sans font-normal text-gray-400 text-xs dark:text-neutral-300">
+        <div className="font-sans text-xs font-normal text-gray-400 dark:text-neutral-300">
           {description}
         </div>
       </div>

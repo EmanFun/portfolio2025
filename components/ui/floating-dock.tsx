@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "../../lib/utils";
 import { IconLayoutNavbarCollapse } from "@tabler/icons-react";
 import {
   AnimatePresence,
@@ -42,7 +42,7 @@ const FloatingDockMobile = ({
         {open && (
           <motion.div
             layoutId="nav"
-            className="absolute bottom-full mb-2 flex flex-col gap-2"
+            className="absolute flex flex-col gap-2 mb-2 bottom-full"
             style={{
               backgroundColor: "rgba(0, 0, 0, 0.5)",
               backdropFilter: "blur(8px)",
@@ -62,7 +62,7 @@ const FloatingDockMobile = ({
               >
                 <Link
                   href={item.href}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-black/50 backdrop-blur-sm"
+                  className="flex items-center justify-center w-10 h-10 rounded-full bg-black/50 backdrop-blur-sm"
                 >
                   {item.icon}
                 </Link>
@@ -73,9 +73,9 @@ const FloatingDockMobile = ({
       </AnimatePresence>
       <button
         onClick={() => setOpen(!open)}
-        className="flex h-12 w-12 items-center justify-center rounded-full bg-black/50 backdrop-blur-sm"
+        className="flex items-center justify-center w-12 h-12 rounded-full bg-black/50 backdrop-blur-sm"
       >
-        <IconLayoutNavbarCollapse className="h-6 w-6 text-white" />
+        <IconLayoutNavbarCollapse className="w-6 h-6 text-white" />
       </button>
     </div>
   );
@@ -173,7 +173,7 @@ function IconContainer({
         style={{ width, height }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="aspect-square rounded-full bg-black/50 flex items-center justify-center relative"
+        className="relative flex items-center justify-center rounded-full aspect-square bg-black/50"
       >
         <AnimatePresence>
           {hovered && (

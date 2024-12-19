@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "../../lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
@@ -29,7 +29,7 @@ export const HoverEffect = ({
         <Link
           href={item?.link}
           key={item?.link}
-          className="relative group  block p-2 h-full w-full"
+          className="relative block w-full h-full p-2 group"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
@@ -88,11 +88,11 @@ export const Card = ({
           src={image || defaultImage}
           alt="Card background"
           fill
-          className="object-cover z-0"
+          className="z-0 object-cover"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
-        <div className="absolute w-full h-full top-0 left-0 transition duration-300 group-hover/card:bg-black opacity-10"></div>
-        <div className="flex flex-row items-center space-x-4 z-10"></div>
+        <div className="absolute top-0 left-0 w-full h-full transition duration-300 group-hover/card:bg-black opacity-10"></div>
+        <div className="z-10 flex flex-row items-center space-x-4"></div>
         <div className="p-4">{children}</div>
       </div>
     </div>

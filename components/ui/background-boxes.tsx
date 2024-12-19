@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { cn } from "../../lib/utils";
 
 export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
   const rows = new Array(150).fill(1);
@@ -35,7 +35,7 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
       {rows.map((_, i) => (
         <motion.div
           key={`row` + i}
-          className="w-16 h-8  border-l  border-slate-700 relative"
+          className="relative w-16 h-8 border-l border-slate-700"
         >
           {cols.map((_, j) => (
             <motion.div
@@ -47,7 +47,7 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
                 transition: { duration: 2 },
               }}
               key={`col` + j}
-              className="w-16 h-8  border-r border-t border-slate-700 relative"
+              className="relative w-16 h-8 border-t border-r border-slate-700"
             >
               {j % 2 === 0 && i % 2 === 0 ? (
                 <svg
