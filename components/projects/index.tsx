@@ -2,8 +2,8 @@
 
 import React, { useMemo } from "react";
 import { HoverEffect } from "../ui/card-hover-effect";
-import agileStratImg from '@/public/agileStrat.png';
-import laslesVpnImg from '@/public/lasles-vpn.png';
+import agileStratImg from '../public/agileStrat.png';
+import laslesVpnImg from '../public/lasles-vpn.png';
 import Image from "next/image";
 
 const Projects = () => {

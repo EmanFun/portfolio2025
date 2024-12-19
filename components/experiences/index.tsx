@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { LampContainer } from "../ui/lamp";
-import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
+import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
 
 const Experiences = () => {
   return (

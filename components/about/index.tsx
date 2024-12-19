@@ -1,7 +1,7 @@
 "use client";
 import React, { useMemo } from "react";
-import { Boxes } from "@/components/ui/background-boxes";
-import { cn } from "@/lib/utils";
+import { Boxes } from "../ui/background-boxes";
+import { cn } from "../../lib/utils";
 
 const About = () => {
   const memoizedBoxess = useMemo(() => {
