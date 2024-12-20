@@ -8,7 +8,7 @@ const Experiences = () => {
   return (
     <section id='experiences'>
       <div className=' relative w-full overflow-hidden flex flex-col items-center justify-center text-white pt-28'>
-        <div className='absolute inset-0 w-full h-full bg-slate-700 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none' />
+        <div className=' absolute inset-0 w-full h-full bg-slate-700 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none' />
         <LampContainer>
           <motion.h1
             initial={{ opacity: 0.5, y: 100 }}
@@ -18,20 +18,20 @@ const Experiences = () => {
               duration: 0.8,
               ease: 'easeInOut'
             }}
-            className='mb-8 bg-gradient-to-br from-slate-900 to-slate-700 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-trasparent ,d:tex-7xl'
+            className=' bg-gradient-to-br from-slate-900 to-slate-700 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-trasparent md:tex-7xl'
           >
             Experiences
           </motion.h1>
         </LampContainer>
-        <div className='h-auto'>
-          <BentoGrid className='max-w-4xl mx-auto h-screen overflow-auto'>
+        <div className=''>
+          <BentoGrid className='md:h-screen max-w-4xl mx-auto'>
             {experiences.map((experience, i: number) => (
               <BentoGridItem
                 key={i}
                 title={experience.title}
                 description={experience.description}
                 header={experience.header}
-                className={i === 3 || i === 6 ? 'md:col-span-2' : ''}
+                className={i === 3 || i === 6 ? ' md:col-span-2' : ''}
               />
             ))}
           </BentoGrid>
@@ -57,7 +57,7 @@ const JobDescription = ({
   return (
     <div>
       <div>
-        <h1 className='text-lg font-bold my-2'>Responsabilidades:</h1>
+        <h1 className='text-base font-bold my-2'>Responsabilidades:</h1>
         <ol>
           {responsabilities.map((responsability, i) => {
             return <li key={i}>{responsability}</li>
@@ -65,7 +65,7 @@ const JobDescription = ({
         </ol>
       </div>
       <div className=''>
-        <h2 className='text-lg font-bold my-2'>Tecnologias:</h2>
+        <h2 className='text-base font-bold my-2'>Tecnologias:</h2>
         <ul className='flex flex-row flex-wrap gap-2'>
           {technologies.map((technology, i) => {
             return (

@@ -10,7 +10,7 @@ const About = () => {
 
   return (
     <section id="about">
-      <div className="h-screen relative w-full overflow-hidden bg-slate-700 flex flex-col items-center justify-center rounded-lg pt-28">
+      <div className="h-[80vh] relative w-full overflow-hidden bg-slate-700 flex flex-col items-center justify-center rounded-lg pt-28">
         <div className="absolute inset-0 w-full h-full bg-slate-700 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
         {memoizedBoxess}
         <h1
@@ -20,7 +20,7 @@ const About = () => {
         >
           ¡Hola! Soy Emanuel Funes, Desarrollador Full Stack MERN
         </h1>
-        <p className="text-center mt-10 text-neutral-300 relative z-20 max-w-2xl px-4">
+        <p className=" text-center mt-10 text-neutral-300 relative z-20 max-w-2xl px-4 md:text-2xl">
           Apasionado por crear experiencias web innovadoras con el stack MERN.
           Transformo ideas en aplicaciones dinámicas y escalables, combinando
           diseño intuitivo con funcionalidad robusta. Siempre en búsqueda de
