@@ -1,5 +1,6 @@
 import { cn } from "../../lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
+import { StaticImageData } from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -62,18 +63,19 @@ export const HoverEffect = ({
 export const Card = ({
   className,
   children,
-  image,
+/*   image, */
 }: {
   className?: string;
   children: React.ReactNode;
   image: StaticImageData | string;
 }) => {
-  const defaultImage =
-    "https://images.unsplash.com/photo-1544077960-604201fe74bc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1651&q=80";
+/*   const defaultImage =
+    "https://images.unsplash.com/photo-1544077960-604201fe74bc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1651&q=80"; */
   return (
     <div
       className={cn(
         "rounded-2xl h-full w-full p-4 overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
+        
         className
       )}
     >

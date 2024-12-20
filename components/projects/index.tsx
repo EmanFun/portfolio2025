@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useMemo } from "react";
-import { HoverEffect } from "../ui/card-hover-effect";
+import React from "react";
+
 import agileStratImg from '../../public/agileStrat.png';
 import laslesVpnImg from '../../public/lasles-vpn.png';
 
@@ -32,7 +32,7 @@ const Projects = () => {
   );
 };
 
-const items = [
+export const items = [
   {
     title: "Agile Strat",
     description: "descripton",
