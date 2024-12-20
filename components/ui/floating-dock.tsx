@@ -80,7 +80,7 @@ const FloatingDockMobile = ({
         onClick={() => setOpen(!open)}
         className="flex items-center justify-center w-12 h-12 rounded-full bg-black/50 backdrop-blur-sm"
       >
-        <IconLayoutNavbarCollapse className="w-6 h-6 text-white" />
+        <IconLayoutNavbarCollapse className="w-6 h-6 text-neutral-300 bg-gray-400" />
       </button>
     </div>
   );
@@ -102,6 +102,10 @@ const FloatingDockDesktop = ({
         "mx-auto hidden md:flex h-16 gap-4 items-end  rounded-2xl  bg-black/50 backdrop-blur-sm px-4 pb-3",
         className
       )}
+      style={{
+        background:
+          "linear-gradient(180deg, var(--slate-800), var(--slate-900)",
+      }} 
     >
       {items.map((item) => (
         <IconContainer mouseX={mouseX} key={item.title} {...item} />
@@ -170,7 +174,7 @@ function IconContainer({
         style={{ width, height }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="relative flex items-center justify-center rounded-full aspect-square bg-black/50"
+        className="relative flex items-center justify-center rounded-full aspect-square bg-gray-900"
       >
         <AnimatePresence>
           {hovered && (

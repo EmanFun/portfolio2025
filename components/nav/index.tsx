@@ -15,14 +15,14 @@ const Nav = () => {
     <div className="fixed top-10 inset-x-0 max-w-2xl mx-auto z-50">
       <Menu setActive={setActive}>
         <MenuItem
-          item="About"
+          item="Sobre mi"
           active={active}
           setActive={setActive}
           onClick={() => scrollToSection("about")}
         />
 
         <MenuItem
-          item="Experiences"
+          item="Experiencias"
           active={active}
           setActive={setActive}
           onClick={() => scrollToSection("experiences")}
@@ -35,14 +35,14 @@ const Nav = () => {
         />
 
         <MenuItem
-          item="Projects"
+          item="Proyectos"
           active={active}
           setActive={setActive}
           onClick={() => scrollToSection("projects")}
         />
 
         <MenuItem
-          item="Contact"
+          item="Contacto"
           active={active}
           setActive={setActive}
           onClick={() => scrollToSection("contact")}

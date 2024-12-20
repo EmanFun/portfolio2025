@@ -15,7 +15,7 @@ const About = () => {
         {memoizedBoxess}
         <h1
           className={cn(
-            "md:text-4xl text-xl text-gray-400 relative z-20 mb-10"
+            "md:text-4xl text-lg text-center text-gray-400 relative z-20 mb-10"
           )}
         >
           ¡Hola! Soy Emanuel Funes, Desarrollador Full Stack MERN
